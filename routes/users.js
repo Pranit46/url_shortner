@@ -58,7 +58,7 @@ router.post("/register", async (req, res) => {
         subject: "Account Activation",
         html: `<h1>Email Verification</h1>
         <h3>Dear ${req.body.name}!</h3>
-        <p>PLeae  <a href=http://localhost:4000/users/verify-email/${document.emailToken}> Click here</a> to activate your account</p>
+        <p>PLeae  <a href="https://urlshortnerbackend10.herokuapp.com/users/verify-email/${document.emailToken}"> Click here</a> to activate your account</p>
         <p>The link will expire in few minutes</p>
         </div>`,
       });
@@ -86,7 +86,7 @@ router.get("/verify-email/:token", async (req, res) => {
       //   message: "Data Changed Successfully",
       //   data: { document },
       // });
-      res.redirect(`http://localhost:3000/verify-email/${req.params.token}`);
+      res.redirect(`https://dreamy-sammet-0eed1c.netlify.app/verify-email/${req.params.token}`);
     } else {
       console.log("email is not verified");
     }
@@ -182,7 +182,7 @@ router.post("/forgot-password", async (req, res) => {
         subject: "Account Activation",
         html: `<h1>Email Verification</h1>
         <h3>Dear ${Data.name}!</h3>
-        <p>PLeae  <a href="http://localhost:4000/verify-email/${Data.emailToken}"> Click here</a> to activate your account</p>
+        <p>PLeae  <a href="https://urlshortnerbackend10.herokuapp.com/verify-email/${Data.emailToken}"> Click here</a> to activate your account</p>
         <p>The link will expire in few minutes</p>
         </div>`,
       });
